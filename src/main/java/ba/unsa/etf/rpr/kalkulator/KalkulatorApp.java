@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class KalkulatorApp extends Application {
+
+    private double prvi;
+
+    public
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(KalkulatorApp.class.getResource("hello-view.fxml"));
@@ -20,6 +24,5 @@ public class KalkulatorApp extends Application {
     public static void main(String[] args) {
         launch();
 
-        Thread.sleep(t);
     }
 }
