@@ -5,29 +5,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="312.0"  stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="312.0"  stylesheets="@style.css"  xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ba.unsa.etf.rpr.kalkulator.KalkulatorApp">
    <children>
-      <Button layoutX="79.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="1" />
-      <Button layoutX="122.0" layoutY="176.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="2" />
-      <Button layoutX="161.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="3" />
-      <Button layoutX="78.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="4" />
-      <Button layoutX="122.0" layoutY="137.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="5" />
-      <Button layoutX="161.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="6" />
-      <Button layoutX="78.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="7" />
-      <Button layoutX="122.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="8" />
-      <Button layoutX="161.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="9" />
-      <TextField fx:id="greenEl" alignment="BOTTOM_LEFT" editable="false" layoutX="77.0" layoutY="14.0" prefHeight="39.0" prefWidth="161.0" styleClass="greenEl" text="0">
+      <Button layoutX="79.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" onAction="#onButtonClick" text="1" />
+      <Button layoutX="122.0" layoutY="176.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="2"  onAction="#onButtonClick"/>
+      <Button layoutX="161.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="3" onAction="#onButtonClick" />
+      <Button layoutX="78.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="4" onAction="#onButtonClick" />
+      <Button layoutX="122.0" layoutY="137.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="5" onAction="#onButtonClick" />
+      <Button layoutX="161.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="6" onAction="#onButtonClick" />
+      <Button layoutX="78.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="7"  onAction="#onButtonClick"/>
+      <Button layoutX="122.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="8"  onAction="#onButtonClick"/>
+      <Button layoutX="161.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="9" onAction="#onButtonClick" />
+      <TextField  fx:id="display" alignment="BOTTOM_LEFT" editable="false" layoutX="77.0" layoutY="14.0" prefHeight="39.0" prefWidth="161.0" styleClass="greenEl" text="0">
          <font>
             <Font name="Lucida Console" size="20.0" />
          </font>
       </TextField>
-      <Button layoutX="202.0" layoutY="174.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="30.0"  styleClass="redEl" text="=" />
-      <Button layoutX="202.0" layoutY="101.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="30.0"  styleClass="redEl"  text="＋" />
-      <Button layoutX="79.0" layoutY="216.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="0" />
-      <Button layoutX="202.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="-" />
-      <Button layoutX="160.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0"  text="×" />
-      <Button layoutX="122.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0"  text="\\" />
-      <Button layoutX="161.0" layoutY="215.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="." />
-      <Button layoutX="78.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="29.0"  text="\%" />
+      <Button layoutX="202.0" layoutY="174.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="30.0"  styleClass="redEl" text="=" onAction="#onButtonClick" />
+      <Button layoutX="202.0" layoutY="101.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="30.0"  styleClass="redEl"  text="＋"  onAction="#onButtonClick"/>
+      <Button layoutX="79.0" layoutY="216.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="0" onAction="#onButtonClick" />
+      <Button layoutX="202.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="-" onAction="#onButtonClick" />
+      <Button layoutX="160.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0"  text="×" onAction="#onButtonClick" />
+      <Button layoutX="122.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0"  text="\\" onAction="#onButtonClick" />
+      <Button layoutX="161.0" layoutY="215.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="."  onAction="#onButtonClick"/>
+      <Button layoutX="78.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="29.0"  text="\%"  onAction="#onButtonClick"/>
    </children>
 </AnchorPane>
