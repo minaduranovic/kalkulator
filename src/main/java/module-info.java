@@ -11,6 +11,6 @@ module com.example.kalkulator {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens ba.unsa.etf.rpr.kalkulator to javafx.fxml;
-    exports ba.unsa.etf.rpr.kalkulator;
+    opens ba.unsa.etf.rpr to javafx.fxml;
+    exports ba.unsa.etf.rpr;
 }

@@ -1,57 +1,54 @@
-package ba.unsa.etf.rpr.kalkulator;
+package ba.unsa.etf.rpr;
 
-import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
-
 import static java.lang.Double.parseDouble;
 
-public class KalkulatorApp extends Application {
+
+public class Controller  {
 
     private Double prvi;
     private String odabrani;
     private boolean unos;
 
     @FXML
-    private TextField display;
+    private TextField rezultat;
 
-    public KalkulatorApp() {
+    public Controller() {
         prvi = 0.0;
         odabrani = "";
         unos = false;
     }
 
     @FXML
-    public void onButtonClick(javafx.event.ActionEvent klik) {
-        javafx.scene.control.Button button = (javafx.scene.control.Button) klik.getSource();
+    public void onButtonClick(ActionEvent klik) {
+        Button button = (Button) klik.getSource();
         String tekst = button.getText();
 
         if (tekst.matches("[0-9\\.]")) {
             if (!unos) {
                 unos = true;
-                display.clear();
+                rezultat.clear();
             }
-            display.appendText(tekst);
-        } else if (tekst.matches("[＋－×÷%]")) {
-            prvi = parseDouble(display.getText());
+            rezultat.appendText(tekst);
+        } else if (tekst.matches("[＋－×/%]")) {
+            prvi = parseDouble(rezultat.getText());
             odabrani = tekst;
             unos = false;
         } else if (tekst.equals("=")) {
             Double drugi;
             if (unos) {
-                drugi = parseDouble(display.getText());
+                drugi = parseDouble(rezultat.getText());
             } else {
                 drugi = prvi;
             }
             prvi = izracunaj(odabrani, prvi, drugi);
 
             String result = removeTrailingZeros(prvi.toString());
-            display.setText(result);
+            rezultat.setText(result);
 
             unos = false;
         }
@@ -66,7 +63,7 @@ public class KalkulatorApp extends Application {
                 return a - b;
             case "×":
                 return a * b;
-            case "÷":
+            case "/":
                 return a / b;
             case "%":
                 return a % b;
@@ -80,18 +77,5 @@ public class KalkulatorApp extends Application {
             value = value.replaceAll("0*$", "").replaceAll("\\.$", "");
         }
         return value;
-    }
-
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(KalkulatorApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 300, 300);
-        stage.setTitle("Kalkulator");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
